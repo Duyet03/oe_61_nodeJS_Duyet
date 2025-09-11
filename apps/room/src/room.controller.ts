@@ -1,5 +1,5 @@
 import { Controller } from '@nestjs/common';
-import { MessagePattern, Payload } from '@nestjs/microservices';
+import { EventPattern, MessagePattern, Payload } from '@nestjs/microservices';
 import { RoomService } from './room.service';
 import { ListRoomDto } from '@app/common/dto/list-room.dto';
 import { CreateRoomDto, UpdateRoomDto } from '@app/common';

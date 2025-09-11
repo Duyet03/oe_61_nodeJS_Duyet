@@ -1,0 +1,10 @@
+{
+  "EXISTS": "The user already exists",
+  "CREATED_SUCCESS": "Create user successfully, avatar is uploading in background",
+  "UPDATED_SUCCESS": "Update user successfully, avatar is uploading in background",
+  "DELETED_SUCCESS": "Delete user successfully",
+  "NOT_FOUND": "User not found",
+  "CREATE_FAILED": "Failed to create user",
+  "UPDATE_FAILED": "Failed to update user",
+  "DELETE_FAILED": "Failed to delete user"
+}

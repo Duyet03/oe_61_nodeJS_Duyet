@@ -2,7 +2,7 @@ import { Controller, Inject, Logger } from '@nestjs/common';
 import { ClientProxy, MessagePattern, Payload } from '@nestjs/microservices';
 import { CloudinaryService } from './cloudinary/cloudinary.service';
 import { UploadApiResponse } from 'cloudinary';
-import { UploadPayload } from '@app/common';
+import { UploadPayload, UserUploadPayload } from '@app/common';
 
 @Controller()
 export class UploadController {

@@ -7,7 +7,10 @@ import {
   IsInt,
   IsOptional,
   IsUrl,
+  IsEnum,
 } from 'class-validator';
+import { UserStatus } from '../constants/database.constants';
+import { Type } from 'class-transformer';
 
 export class CreateUserDto {
   @IsString({ message: 'validation.IS_STRING' })
@@ -30,6 +33,7 @@ export class CreateUserDto {
   @IsOptional() // phone is not required
   phone?: string;
 
+  @Type(() => Number)
   @IsInt({ message: 'validation.IS_INT' })
   @IsNotEmpty({ message: 'validation.IS_NOT_EMPTY' })
   role_id: number;
@@ -37,4 +41,9 @@ export class CreateUserDto {
   @IsUrl({}, { message: 'validation.IS_URL' })
   @IsOptional() // avatar is not required
   avatar?: string;
+
+  @Type(() => Number)
+  @IsEnum(UserStatus)
+  @IsOptional()
+  status?: UserStatus = UserStatus.ACTIVE;
 }

@@ -90,3 +90,8 @@ export interface UploadPayload {
   file: SerializedFile;
   roomId: number;
 }
+
+export interface UserUploadPayload {
+  file: SerializedFile;
+  userId: number;
+}

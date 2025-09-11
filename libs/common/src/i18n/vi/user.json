@@ -1,0 +1,10 @@
+{
+  "EXISTS": "Người dùng này đã tồn tại",
+  "CREATED_SUCCESS": "Tạo người dùng thành công, avatar đang được tải trong nền",
+  "UPDATED_SUCCESS": "Cập nhật người dùng thành công, avatar đang được tải trong nền",
+  "DELETED_SUCCESS": "Xóa người dùng thành công",
+  "NOT_FOUND": "Không tìm thấy người dùng",
+  "CREATE_FAILED": "Tạo người dùng thất bại",
+  "UPDATE_FAILED": "Cập nhật người dùng thất bại",
+  "DELETE_FAILED": "Xóa người dùng thất bại"
+}
