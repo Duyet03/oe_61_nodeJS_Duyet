@@ -2,7 +2,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AdminUserController } from './admin-user.controller';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
-import { of, throwError } from 'rxjs';
+import { of, throwError, lastValueFrom } from 'rxjs';
 import { I18nContext, I18nService } from 'nestjs-i18n';
 import { validate } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
@@ -13,6 +13,7 @@ import {
   RolesGuard,
   UpdateUserDto,
 } from '@app/common';
+import { HttpException } from '@nestjs/common';
 
 // --- Mocks ---
 const mockUserClient = { send: jest.fn() };
@@ -22,6 +23,7 @@ const mockI18nService = { t: jest.fn().mockImplementation((key) => key) };
 jest.mock('nestjs-i18n', () => ({
   I18nModule: { forRoot: jest.fn() },
   I18nContext: { current: jest.fn() },
+  I18nService: class {},
 }));
 
 describe('AdminUserController', () => {
@@ -78,8 +80,9 @@ describe('AdminUserController', () => {
       const rpcError = new RpcException('Error');
       jest.spyOn(userClient, 'send').mockReturnValue(throwError(() => rpcError));
 
-      const result$ = controller.listUsers(dto);
-      await expect(result$.toPromise()).rejects.toThrow(rpcError);
+      await expect(lastValueFrom(controller.listUsers(dto))).rejects.toThrow(
+        rpcError,
+      );
     });
   });
 
@@ -228,16 +231,41 @@ describe('AdminUserController', () => {
       expect(res.data).toEqual(deleteResponse);
     });
 
-    it('should propagate RpcException', async () => {
+    it('should wrap RpcException into HttpException with structured response', async () => {
       const rpcError = new RpcException('User not found');
       jest.spyOn(userClient, 'send').mockReturnValue(throwError(() => rpcError));
 
-      await expect(controller.deleteUser(1)).rejects.toThrow(rpcError);
+      try {
+        await controller.deleteUser(1);
+        fail('Expected HttpException to be thrown');
+      } catch (e) {
+        expect(e).toBeInstanceOf(HttpException);
+        const http = e as HttpException;
+        expect(http.getStatus()).toBe(400);
+        const body = http.getResponse() as any;
+        expect(body.status).toBe(false);
+        expect(body.message).toBe('user.DELETE_FAILED');
+        expect(body.error).toBe('User not found');
+      }
     });
 
-    it('should handle other errors in catch', async () => {
-      jest.spyOn(userClient, 'send').mockReturnValue(throwError(() => new Error('Unknown error')));
-      await expect(controller.deleteUser(1)).rejects.toThrow('Unknown error');
+    it('should wrap unknown errors into HttpException with error message', async () => {
+      jest
+        .spyOn(userClient, 'send')
+        .mockReturnValue(throwError(() => new Error('Unknown error')));
+
+      try {
+        await controller.deleteUser(1);
+        fail('Expected HttpException to be thrown');
+      } catch (e) {
+        expect(e).toBeInstanceOf(HttpException);
+        const http = e as HttpException;
+        expect(http.getStatus()).toBe(400);
+        const body = http.getResponse() as any;
+        expect(body.status).toBe(false);
+        expect(body.message).toBe('user.DELETE_FAILED');
+        expect(body.error).toBe('Unknown error');
+      }
     });
   });
 });
