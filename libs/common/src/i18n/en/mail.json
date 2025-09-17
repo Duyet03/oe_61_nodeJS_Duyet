@@ -4,12 +4,26 @@
   "TEMPLATE": {
     "TITLE": "Duyet Activation Email",
     "HEADER": "Hotel DT welcomes you",
-    "GREETING": "Hello {name}",
+    "GREETING": "Hello",
     "THANK_YOU_MESSAGE": "Thank you for registering with Duyet. To activate your account, please use the following activation code:",
     "IGNORE_MESSAGE": "If you did not register for a Duyet account, please ignore this email.",
     "FOOTER": "Thank you",
     "PASSWORD_MESSAGE": "Your password is: ",
     "PASSWORD_NOTE": "Please change your password after your first login.",
-    "FORGOT_PASSWORD_MESSAGE": "You have requested to reset your password for your account. Here is the verification code to change your password. If you did not request this, please ignore this email."
-  }
+    "FORGOT_PASSWORD_MESSAGE": "You have requested to reset your password for your account. Here is the verification code to change your password. If you did not request this, please ignore this email.",
+    "BOOKING_CONFIRMATION": {
+      "HEADER": "Booking Successful!",
+      "MESSAGE": "Thank you for trusting and booking with our hotel. Here are the details of your reservation:",
+      "FOOTER": "We look forward to welcoming you. Best regards!",
+      "DETAILS_HEADER": "Booking Details",
+      "INVOICE_CODE": "Invoice Code",
+      "CHECK_IN_DATE": "Check-in Date",
+      "CHECK_OUT_DATE": "Check-out Date",
+      "BOOKED_ROOMS": "Booked Rooms",
+      "PRICE_PER_NIGHT": "VND/night",
+      "TOTAL_PAYMENT": "Total Payment",
+      "ROOM": "Room"
+    }
+  },
+  "BOOKING_CONFIRMATION_SUBJECT": "Your Booking Confirmation"
 }

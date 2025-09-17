@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/unbound-method */
 import { Test, TestingModule } from '@nestjs/testing';
 import { AdminUserController } from './admin-user.controller';
 import { RpcException } from '@nestjs/microservices';
@@ -13,6 +14,7 @@ import {
 import { validate } from 'class-validator';
 import { plainToInstance } from 'class-transformer';
 import { User } from '@app/database';
+import { Logger } from '@nestjs/common';
 
 // Mock dependencies
 const mockUserClient = { send: jest.fn() };
@@ -160,6 +162,9 @@ describe('AdminUserController', () => {
     });
 
     it('should return failure response on error', async () => {
+      const loggerSpy = jest
+        .spyOn(Logger.prototype, 'error')
+        .mockImplementation(() => {});
       const errorMessage = 'user.CREATE_FAILED';
       mockUserClient.send.mockReturnValue(
         throwError(() => new RpcException(errorMessage)),
@@ -171,6 +176,7 @@ describe('AdminUserController', () => {
         status: false,
         message: errorMessage,
       });
+      loggerSpy.mockRestore();
     });
 
     describe('CreateUserDto validation', () => {
@@ -221,6 +227,9 @@ describe('AdminUserController', () => {
     });
 
     it('should return failure response on error', async () => {
+      const loggerSpy = jest
+        .spyOn(Logger.prototype, 'error')
+        .mockImplementation(() => {});
       const errorMessage = 'user.UPDATE_FAILED';
       mockUserClient.send.mockReturnValue(
         throwError(() => new RpcException(errorMessage)),
@@ -232,6 +241,7 @@ describe('AdminUserController', () => {
         status: false,
         message: errorMessage,
       });
+      loggerSpy.mockRestore();
     });
 
     describe('UpdateUserDto validation', () => {
@@ -272,6 +282,9 @@ describe('AdminUserController', () => {
     });
 
     it('should throw HttpException on failure', async () => {
+      const loggerSpy = jest
+        .spyOn(Logger.prototype, 'error')
+        .mockImplementation(() => {});
       const errorMessage = 'User not found';
       mockUserClient.send.mockReturnValue(
         throwError(() => new RpcException(errorMessage)),
@@ -281,6 +294,7 @@ describe('AdminUserController', () => {
         status: false,
         message: 'user.DELETE_FAILED',
       });
+      loggerSpy.mockRestore();
     });
   });
 });

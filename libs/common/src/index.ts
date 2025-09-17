@@ -20,3 +20,5 @@ export * from './dto/list-room.dto';
 export * from './dto/update-room.dto';
 export * from './dto/update-user.dto';
 export * from './dto/create-user.dto';
+export * from './dto/vnpay-return.dto';
+export * from './dto/create-booking.dto';

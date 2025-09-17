@@ -1,0 +1,12 @@
+{
+  "SUCCESS": "Payment successful! Your booking has been confirmed.",
+  "FAILED": "Payment failed. Please try again or choose another payment method.",
+  "INVALID_SIGNATURE": "Payment verification error. Please contact support.",
+  "INVALID_TIME": "The check-out date must be after the check-in date.",
+  "ROOM_REQUIRED": "At least one room must be selected",
+  "ROOM_NOT_FOUND": "One or more rooms not found",
+  "SERVICE_NOT_FOUND": "One or more services not found",
+  "ROOM_NOT_AVAILABLE": "One or more rooms are not available for the selected dates",
+  "QUANTITY_MISMATCH": "Number of quantities must match number of services",
+  "START_TIME_PAST": "Start time cannot be in the past."
+}

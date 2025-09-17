@@ -8,5 +8,9 @@
   "IS_INT": "{property} phải là một số nguyên.",
   "IS_BOOLEAN": "{property} phải là một giá trị boolean (true/false).",
   "IS_NUMBER": "{property} phải là một số.",
-  "MIN": "{property} không được nhỏ hơn {constraints.0}."
+  "MIN": "{property} không được nhỏ hơn {constraints.0}.",
+  "IS_ARRAY": "{property} phải là một mảng.",
+  "IS_DATE_STRING": "{property} phải là một chuỗi ngày tháng hợp lệ (ISO 8601).",
+  "IS_POSITIVE": "{property} phải là một số dương.",
+  "IS_ENUM": "{property} phải là một giá trị enum hợp lệ."
 }

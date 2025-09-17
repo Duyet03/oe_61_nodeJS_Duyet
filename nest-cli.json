@@ -18,6 +18,15 @@
         "tsConfigPath": "apps/auth/tsconfig.app.json"
       }
     },
+    "booking": {
+      "type": "application",
+      "root": "apps/booking",
+      "entryFile": "main",
+      "sourceRoot": "apps/booking/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/booking/tsconfig.app.json"
+      }
+    },
     "common": {
       "type": "library",
       "root": "libs/common",
@@ -84,6 +93,15 @@
         "tsConfigPath": "apps/room/tsconfig.app.json"
       }
     },
+    "upload": {
+      "type": "application",
+      "root": "apps/upload",
+      "entryFile": "main",
+      "sourceRoot": "apps/upload/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/upload/tsconfig.app.json"
+      }
+    },
     "user": {
       "type": "application",
       "root": "apps/user",
@@ -93,13 +111,13 @@
         "tsConfigPath": "apps/user/tsconfig.app.json"
       }
     },
-    "upload": {
+    "vnpay": {
       "type": "application",
-      "root": "apps/upload",
+      "root": "apps/vnpay",
       "entryFile": "main",
-      "sourceRoot": "apps/upload/src",
+      "sourceRoot": "apps/vnpay/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/upload/tsconfig.app.json"
+        "tsConfigPath": "apps/vnpay/tsconfig.app.json"
       }
     }
   }

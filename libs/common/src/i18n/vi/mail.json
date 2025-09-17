@@ -4,12 +4,26 @@
   "TEMPLATE": {
     "TITLE": "Email Kích hoạt tài khoản Duyệt",
     "HEADER": "Khách sạn DT xin chào",
-    "GREETING": "Xin chào {name}",
+    "GREETING": "Xin chào",
     "THANK_YOU_MESSAGE": "Cảm ơn bạn đã đăng ký với Duyệt. Để kích hoạt tài khoản, vui lòng sử dụng mã kích hoạt sau:",
     "IGNORE_MESSAGE": "Nếu bạn không đăng ký tài khoản Duyệt, vui lòng bỏ qua email này.",
     "FOOTER": "Cảm ơn bạn",
     "PASSWORD_MESSAGE": "Mật khẩu của bạn là: ",
     "PASSWORD_NOTE": "Vui lòng đổi mật khẩu sau khi đăng nhập lần đầu.",
-    "FORGOT_PASSWORD_MESSAGE": "Bạn đã yêu cầu đặt lại mật khẩu cho tài khoản của mình. Đây là mã xác nhận để đổi mật khẩu. Nếu bạn không yêu cầu, vui lòng bỏ qua email này."
-  }
+    "FORGOT_PASSWORD_MESSAGE": "Bạn đã yêu cầu đặt lại mật khẩu cho tài khoản của mình. Đây là mã xác nhận để đổi mật khẩu. Nếu bạn không yêu cầu, vui lòng bỏ qua email này.",
+    "BOOKING_CONFIRMATION": {
+      "HEADER": "Đặt phòng thành công!",
+      "MESSAGE": "Cảm ơn bạn đã tin tưởng và đặt phòng tại khách sạn của chúng tôi. Dưới đây là thông tin chi tiết về đơn đặt phòng của bạn:",
+      "FOOTER": "Chúng tôi rất mong được đón tiếp bạn. Trân trọng!",
+      "DETAILS_HEADER": "Chi tiết đơn đặt phòng",
+      "INVOICE_CODE": "Mã hóa đơn",
+      "CHECK_IN_DATE": "Ngày nhận phòng",
+      "CHECK_OUT_DATE": "Ngày trả phòng",
+      "BOOKED_ROOMS": "Các phòng đã đặt",
+      "PRICE_PER_NIGHT": "VND/đêm",
+      "TOTAL_PAYMENT": "Tổng thanh toán",
+      "ROOM": "Phòng"
+    }
+  },
+  "BOOKING_CONFIRMATION_SUBJECT": "Xác nhận đặt phòng của bạn"
 }

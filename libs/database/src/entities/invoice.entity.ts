@@ -22,7 +22,7 @@ import {
 
 @Entity({ name: 'invoices' })
 export class Invoice extends BaseEntity {
-  @Column({ type: 'int' })
+  @Column({ type: 'int', nullable: true })
   staff_id: number;
 
   @Column({ type: 'int', unique: true })
@@ -53,6 +53,7 @@ export class Invoice extends BaseEntity {
     type: 'decimal',
     precision: DECIMAL_PRECISION,
     scale: DECIMAL_SCALE,
+    default: 0,
   })
   tax: number;
 

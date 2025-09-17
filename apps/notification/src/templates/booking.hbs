@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{subject}}</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px; color: #333;">
+    <div style="max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 5px;">
+        <h2 style="color: #007bff;">{{header}}</h2>
+        <p>{{greeting}} {{name}},</p>
+        <p>{{message}}</p>
+        
+        <div style="border: 1px solid #ddd; padding: 15px; border-radius: 5px; background-color: #f9f9f9;">
+            <h3 style="margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 10px;">{{chi_tiet_dat_phong}}</h3>
+            <p><strong>{{ma_hoa_don}}:</strong> {{invoice.invoice_code}}</p>
+            <p><strong>{{ngay_nhan_phong}}:</strong> {{startTime}}</p>
+            <p><strong>{{ngay_tra_phong}}:</strong> {{endTime}}</p>
+            
+            <h4>{{cac_phong_da_dat}}:</h4>
+            <ul>
+                {{#each invoice.booking.bookingRooms}}
+                    <li>{{../phong}} {{this.room.room_number}} - {{this.price_at_booking}} {{../dem}}</li>
+                {{/each}}
+            </ul>
+    
+            <hr>
+            <p style="text-align: right; font-size: 1.2em;"><strong>{{tong_thanh_toan}}: {{invoice.total_amount}} VND</strong></p>
+        </div>
+    
+        <p style="margin-top: 30px;">{{footer}}</p>
+    </div>
+</body>
+</html>

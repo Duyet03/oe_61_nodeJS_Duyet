@@ -1,0 +1,9 @@
+{
+  "SUCCESS": "Thanh toán thành công! Đơn đặt phòng của bạn đã được xác nhận.",
+  "FAILED": "Thanh toán thất bại. Vui lòng thử lại hoặc chọn phương thức thanh toán khác.",
+  "INVALID_SIGNATURE": "Lỗi xác thực thanh toán. Vui lòng liên hệ bộ phận hỗ trợ.",
+  "ROOMS_NOT_FOUND": "Một hoặc nhiều phòng bạn chọn không tồn tại.",
+  "ROOMS_NOT_AVAILABLE": "Một hoặc nhiều phòng bạn chọn đã có người đặt trong khoảng thời gian này.",
+  "INVALID_DATES": "Ngày trả phòng phải sau ngày nhận phòng.",
+  "START_TIME_PAST": "Thời gian bắt đầu không được ở trong quá khứ."
+}

@@ -5,6 +5,7 @@ import * as path from 'path';
 import { CacheModule } from '@nestjs/cache-manager';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { redisStore } from 'cache-manager-redis-store';
+import { VnpayService } from '../vnpay/vnpay.service';
 
 @Module({
   imports: [
@@ -29,8 +30,9 @@ import { redisStore } from 'cache-manager-redis-store';
       }),
       isGlobal: true,
     }),
+    ConfigModule.forRoot({ isGlobal: true, envFilePath: './.env' }),
   ],
-  providers: [CommonService],
-  exports: [CommonService, CacheModule],
+  providers: [CommonService, VnpayService],
+  exports: [CommonService, CacheModule, VnpayService],
 })
 export class CommonModule {}

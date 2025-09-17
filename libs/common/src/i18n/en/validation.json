@@ -8,5 +8,9 @@
   "IS_INT": "{property} must be an integer.",
   "IS_BOOLEAN": "{property} must be a boolean value (true/false).",
   "IS_NUMBER": "{property} must be a number.",
-  "MIN": "{property} should not be less than {constraints.0}."
+  "MIN": "{property} should not be less than {constraints.0}.",
+  "IS_ARRAY": "{property} must be an array.",
+  "IS_DATE_STRING": "{property} must be a valid date string (ISO 8601).",
+  "IS_POSITIVE": "{property} must be a positive number.",
+  "IS_ENUM": "{property} must be a valid enum value."
 }

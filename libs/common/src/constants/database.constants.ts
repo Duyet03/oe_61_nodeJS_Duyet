@@ -95,3 +95,6 @@ export interface UserUploadPayload {
   file: SerializedFile;
   userId: number;
 }
+export interface AuthRequest extends Request {
+  user?: JwtPayload;
+}
